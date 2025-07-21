@@ -125,12 +125,12 @@
                 {% if user.is_authenticated %}
                     {% if product.pr_stk_quant > 0 %}
                         <form method="POST" action="{% url 'add_to_cart' product.pr_id %}">
-                            {% csrf_token %}
-                            <button type="submit" class="btn btn-primary btn-lg">
-                                <i class="fas fa-shopping-cart mr-2"></i>
-                                Add to Cart
-                            </button>
-                        </form>
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="fas fa-shopping-cart mr-2"></i>
+                            Add to Cart
+                        </button>
+                    </form>
 
                     {% endif %}
                     
