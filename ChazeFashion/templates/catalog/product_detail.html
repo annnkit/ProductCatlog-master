@@ -124,10 +124,14 @@
             <div class="flex flex-wrap gap-4">
                 {% if user.is_authenticated %}
                     {% if product.pr_stk_quant > 0 %}
-                        <a href="{% url 'add_to_cart' product.pr_id %}" class="btn btn-primary btn-lg">
-                            <i class="fas fa-shopping-cart mr-2"></i>
-                            Add to Cart
-                        </a>
+                        <form method="POST" action="{% url 'add_to_cart' product.pr_id %}">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <i class="fas fa-shopping-cart mr-2"></i>
+                                Add to Cart
+                            </button>
+                        </form>
+
                     {% endif %}
                     
                     <a href="{% url 'add_to_wishlist' product.pr_id %}" class="btn btn-outline btn-lg">

@@ -60,10 +60,11 @@ def user_logout(request):
     return redirect('home')
 
 @login_required
+@login_required
 def profile(request):
     """User profile page"""
-    user_profile = get_object_or_404(UserProfile, user=request.user)
-    
+    user_profile, created = UserProfile.objects.get_or_create(user=request.user)
+
     if request.method == 'POST':
         form = UserProfileForm(request.POST, request.FILES, instance=user_profile)
         if form.is_valid():
@@ -72,12 +73,13 @@ def profile(request):
             return redirect('profile')
     else:
         form = UserProfileForm(instance=user_profile)
-    
+
     context = {
         'user_profile': user_profile,
         'form': form,
     }
     return render(request, 'catalog/profile.html', context)
+
 
 def product_list(request):
     """Product catalog with filtering"""
