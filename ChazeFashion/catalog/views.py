@@ -169,14 +169,21 @@ def remove_from_cart(request, item_id):
     messages.success(request, 'Item removed from cart.')
     return redirect('cart')
 
+# @login_required
+# def wishlist(request):
+#     """User wishlist"""
+#     user_wishlist = get_object_or_404(Wishlist, user=request.user)
+#     context = {
+#         'wishlist': user_wishlist,
+#     }
+#     return render(request, 'catalog/wishlist.html', context)
+
 @login_required
 def wishlist(request):
-    """User wishlist"""
-    user_wishlist = get_object_or_404(Wishlist, user=request.user)
-    context = {
-        'wishlist': user_wishlist,
-    }
-    return render(request, 'catalog/wishlist.html', context)
+    wishlist, created = Wishlist.objects.get_or_create(user=request.user)
+    products = wishlist.products.all()
+    return render(request, 'catalog/wishlist.html', {'products': products})
+
 
 @login_required
 def add_to_wishlist(request, product_id):
