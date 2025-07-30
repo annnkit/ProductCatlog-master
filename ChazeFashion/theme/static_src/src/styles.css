@@ -7,5 +7,35 @@
   *
   * If your final CSS file is not being updated after code changes, you may want to broaden or narrow
   * the scope of this path.
+
   */
+
+  /* Custom reddish theme */
+:root {
+    --theme-primary: #ef4444; /* Red-500 from Tailwind */
+    --theme-secondary: #f87171; /* Red-400 */
+    --theme-background: #fee2e2; /* Red-100 */
+}
+
+/* Brighten navbar with red theme */
+.navbar {
+    background-color: var(--theme-secondary) !important;
+    color: white;
+}
+
+/* Bold headings */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700 !important;
+}
+
+/* Adjust footer to match reddish theme */
+.footer {
+    background-color: var(--theme-background) !important;
+    color: #dc2626; /* Red-600 */
+}
+
+/* Link hover effect in reddish tone */
+.link-hover:hover {
+    color: var(--theme-primary) !important;
+}
 @source "../../../**/*.{html,py,js}";

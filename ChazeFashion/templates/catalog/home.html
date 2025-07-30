@@ -1,163 +1,105 @@
 {% extends 'base.html' %}
 
-{% block title %}ChazeFashion - Unleash Your Style Revolution{% endblock %}
+{% block title %}ChazeFashion - Home{% endblock %}
 
 {% block content %}
 <!-- Hero Section -->
-<div class="hero min-h-[70vh] relative overflow-hidden rounded-3xl mb-16">
-    <div class="hero-content text-center text-white relative z-10">
-        <div class="max-w-2xl">
-            <h1 class="mb-6 text-6xl font-extrabold leading-tight">
-                Unleash Your 
-                <span class="text-gradient bg-gradient-to-r from-red-300 to-white bg-clip-text text-transparent">
-                    Style Revolution
-                </span>
-            </h1>
-            <p class="mb-8 text-xl text-gray-200 leading-relaxed">
-                Step into the future of fashion. From street-style essentials to luxury statements, 
-                we bring you the hottest trends that define your unique personality.
-            </p>
-            <div class="flex gap-4 justify-center flex-wrap">
-                <a href="{% url 'product_list' %}" class="btn btn-primary btn-lg px-8 hover:scale-105 transition-transform">
-                    <i class="fas fa-fire mr-2"></i>
-                    Explore Collection
-                </a>
-                <a href="{% url 'product_list' %}?category=trending" class="btn btn-outline btn-lg px-8 hover:scale-105 transition-transform">
-                    <i class="fas fa-trending-up mr-2"></i>
-                    Trending Now
-                </a>
-            </div>
+<div class="hero min-h-[60vh] bg-gradient-to-r from-primary to-secondary">
+    <div class="hero-content text-center text-neutral-content">
+        <div class="max-w-md">
+            <h1 class="mb-5 text-5xl font-bold">Welcome to ChazeFashion</h1>
+            <p class="mb-5">Discover the latest trends in fashion. From casual wear to formal attire, we have everything you need to express your unique style.</p>
+            <a href="{% url 'product_list' %}" class="btn btn-primary">Shop Now</a>
         </div>
-    </div>
-    
-    <!-- Animated Background Elements -->
-    <div class="absolute top-10 left-10 w-20 h-20 bg-red-500 rounded-full opacity-20 animate-pulse"></div>
-    <div class="absolute bottom-20 right-20 w-32 h-32 bg-red-400 rounded-full opacity-10 animate-bounce"></div>
-    <div class="absolute top-1/2 right-10 w-16 h-16 bg-white rounded-full opacity-10 floating"></div>
-</div>
-
-<!-- Stats Section -->
-<div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-    <div class="stat bg-gradient-to-br from-red-600 to-red-800 text-white rounded-2xl p-6 text-center hover:scale-105 transition-transform">
-        <div class="stat-value text-3xl font-bold">10K+</div>
-        <div class="stat-title text-red-200">Happy Customers</div>
-    </div>
-    <div class="stat bg-gradient-to-br from-green-600 to-green-800 text-white rounded-2xl p-6 text-center hover:scale-105 transition-transform">
-        <div class="stat-value text-3xl font-bold">500+</div>
-        <div class="stat-title text-green-200">Premium Products</div>
-    </div>
-    <div class="stat bg-gradient-to-br from-blue-600 to-blue-800 text-white rounded-2xl p-6 text-center hover:scale-105 transition-transform">
-        <div class="stat-value text-3xl font-bold">98%</div>
-        <div class="stat-title text-blue-200">Satisfaction Rate</div>
-    </div>
-    <div class="stat bg-gradient-to-br from-purple-600 to-purple-800 text-white rounded-2xl p-6 text-center hover:scale-105 transition-transform">
-        <div class="stat-value text-3xl font-bold">24/7</div>
-        <div class="stat-title text-purple-200">Support</div>
     </div>
 </div>
 
 <!-- Categories Section -->
-<div class="py-16">
+<div class="py-16 bg-base-200">
     <div class="container mx-auto">
-        <div class="text-center mb-12">
-            <h2 class="text-4xl font-bold mb-4">
-                <span class="text-gradient">Discover Your Style</span>
-            </h2>
-            <p class="text-xl text-gray-400">Choose from our exclusive collections</p>
-        </div>
-        
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-            <div class="card shadow-2xl hover:shadow-red-500/20 transition-all duration-300 group">
-                <figure class="px-6 pt-6">
+        <h2 class="text-3xl font-bold text-center mb-12">Shop by Category</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow">
+                <figure class="px-10 pt-10">
                     <div class="avatar placeholder">
-                        <div class="bg-gradient-to-br from-red-500 to-red-700 text-white rounded-full w-20 h-20 group-hover:scale-110 transition-transform">
+                        <div class="bg-primary text-primary-content rounded-full w-24">
                             <span class="text-3xl">👨</span>
                         </div>
                     </div>
                 </figure>
-                <div class="card-body items-center text-center p-6">
-                    <h2 class="card-title text-white text-lg">Men's Fashion</h2>
-                    <p class="text-sm text-gray-400">Bold & Sophisticated</p>
-                    <div class="card-actions mt-4">
-                        <a href="{% url 'product_list' %}?category=Men" class="btn btn-primary btn-sm hover:scale-105 transition-transform">
-                            <i class="fas fa-arrow-right mr-2"></i>Shop Men
-                        </a>
+                <div class="card-body items-center text-center">
+                    <h2 class="card-title">Men</h2>
+                    <p class="text-sm">Stylish clothing for men</p>
+                    <div class="card-actions">
+                        <a href="{% url 'product_list' %}?category=Men" class="btn btn-primary btn-sm">Shop Men</a>
                     </div>
                 </div>
             </div>
             
-            <div class="card shadow-2xl hover:shadow-green-500/20 transition-all duration-300 group">
-                <figure class="px-6 pt-6">
+            <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow">
+                <figure class="px-10 pt-10">
                     <div class="avatar placeholder">
-                        <div class="bg-gradient-to-br from-green-500 to-green-700 text-white rounded-full w-20 h-20 group-hover:scale-110 transition-transform">
+                        <div class="bg-secondary text-secondary-content rounded-full w-24">
                             <span class="text-3xl">👩</span>
                         </div>
                     </div>
                 </figure>
-                <div class="card-body items-center text-center p-6">
-                    <h2 class="card-title text-white text-lg">Women's Fashion</h2>
-                    <p class="text-sm text-gray-400">Elegant & Trendy</p>
-                    <div class="card-actions mt-4">
-                        <a href="{% url 'product_list' %}?category=Women" class="btn bg-green-600 hover:bg-green-700 text-white btn-sm hover:scale-105 transition-transform border-none">
-                            <i class="fas fa-arrow-right mr-2"></i>Shop Women
-                        </a>
+                <div class="card-body items-center text-center">
+                    <h2 class="card-title">Women</h2>
+                    <p class="text-sm">Elegant fashion for women</p>
+                    <div class="card-actions">
+                        <a href="{% url 'product_list' %}?category=Women" class="btn btn-secondary btn-sm">Shop Women</a>
                     </div>
                 </div>
             </div>
             
-            <div class="card shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 group">
-                <figure class="px-6 pt-6">
+            <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow">
+                <figure class="px-10 pt-10">
                     <div class="avatar placeholder">
-                        <div class="bg-gradient-to-br from-blue-500 to-blue-700 text-white rounded-full w-20 h-20 group-hover:scale-110 transition-transform">
+                        <div class="bg-accent text-accent-content rounded-full w-24">
                             <span class="text-3xl">👦</span>
                         </div>
                     </div>
                 </figure>
-                <div class="card-body items-center text-center p-6">
-                    <h2 class="card-title text-white text-lg">Boys Collection</h2>
-                    <p class="text-sm text-gray-400">Cool & Comfortable</p>
-                    <div class="card-actions mt-4">
-                        <a href="{% url 'product_list' %}?category=Boys" class="btn bg-blue-600 hover:bg-blue-700 text-white btn-sm hover:scale-105 transition-transform border-none">
-                            <i class="fas fa-arrow-right mr-2"></i>Shop Boys
-                        </a>
+                <div class="card-body items-center text-center">
+                    <h2 class="card-title">Boys</h2>
+                    <p class="text-sm">Cool clothes for boys</p>
+                    <div class="card-actions">
+                        <a href="{% url 'product_list' %}?category=Boys" class="btn btn-accent btn-sm">Shop Boys</a>
                     </div>
                 </div>
             </div>
             
-            <div class="card shadow-2xl hover:shadow-pink-500/20 transition-all duration-300 group">
-                <figure class="px-6 pt-6">
+            <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow">
+                <figure class="px-10 pt-10">
                     <div class="avatar placeholder">
-                        <div class="bg-gradient-to-br from-pink-500 to-pink-700 text-white rounded-full w-20 h-20 group-hover:scale-110 transition-transform">
+                        <div class="bg-info text-info-content rounded-full w-24">
                             <span class="text-3xl">👧</span>
                         </div>
                     </div>
                 </figure>
-                <div class="card-body items-center text-center p-6">
-                    <h2 class="card-title text-white text-lg">Girls Collection</h2>
-                    <p class="text-sm text-gray-400">Pretty & Playful</p>
-                    <div class="card-actions mt-4">
-                        <a href="{% url 'product_list' %}?category=Girls" class="btn bg-pink-600 hover:bg-pink-700 text-white btn-sm hover:scale-105 transition-transform border-none">
-                            <i class="fas fa-arrow-right mr-2"></i>Shop Girls
-                        </a>
+                <div class="card-body items-center text-center">
+                    <h2 class="card-title">Girls</h2>
+                    <p class="text-sm">Pretty dresses for girls</p>
+                    <div class="card-actions">
+                        <a href="{% url 'product_list' %}?category=Girls" class="btn btn-info btn-sm">Shop Girls</a>
                     </div>
                 </div>
             </div>
             
-            <div class="card shadow-2xl hover:shadow-yellow-500/20 transition-all duration-300 group">
-                <figure class="px-6 pt-6">
+            <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow">
+                <figure class="px-10 pt-10">
                     <div class="avatar placeholder">
-                        <div class="bg-gradient-to-br from-yellow-500 to-orange-600 text-white rounded-full w-20 h-20 group-hover:scale-110 transition-transform">
+                        <div class="bg-success text-success-content rounded-full w-24">
                             <span class="text-3xl">👶</span>
                         </div>
                     </div>
                 </figure>
-                <div class="card-body items-center text-center p-6">
-                    <h2 class="card-title text-white text-lg">Toddler Wear</h2>
-                    <p class="text-sm text-gray-400">Soft & Adorable</p>
-                    <div class="card-actions mt-4">
-                        <a href="{% url 'product_list' %}?category=Toddler" class="btn bg-orange-600 hover:bg-orange-700 text-white btn-sm hover:scale-105 transition-transform border-none">
-                            <i class="fas fa-arrow-right mr-2"></i>Shop Toddler
-                        </a>
+                <div class="card-body items-center text-center">
+                    <h2 class="card-title">Toddler</h2>
+                    <p class="text-sm">Comfortable baby clothes</p>
+                    <div class="card-actions">
+                        <a href="{% url 'product_list' %}?category=Toddler" class="btn btn-success btn-sm">Shop Toddler</a>
                     </div>
                 </div>
             </div>
@@ -168,179 +110,82 @@
 <!-- Featured Products Section -->
 <div class="py-16">
     <div class="container mx-auto">
-        <div class="text-center mb-12">
-            <h2 class="text-4xl font-bold mb-4">
-                <span class="text-gradient">🔥 Trending Products</span>
-            </h2>
-            <p class="text-xl text-gray-400">Handpicked favorites that are flying off the shelves</p>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <h2 class="text-3xl font-bold text-center mb-12">Featured Products</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {% for product in products %}
-            <div class="card shadow-2xl hover:shadow-red-500/30 transition-all duration-500 group hover:-translate-y-2">
-                <figure class="px-4 pt-4 relative overflow-hidden">
+            <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow">
+                <figure class="px-4 pt-4">
                     {% if product.pr_images %}
-                        <img src="{{ product.pr_images.url }}" alt="{{ product.pr_name }}" 
-                             class="rounded-xl h-56 w-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <img src="{{ product.pr_images.url }}" alt="{{ product.pr_name }}" class="rounded-xl h-48 w-full object-cover" />
                     {% else %}
-                        <div class="bg-gradient-to-br from-gray-700 to-gray-900 rounded-xl h-56 w-full flex items-center justify-center">
-                            <i class="fas fa-tshirt text-6xl text-red-400 floating"></i>
+                        <div class="bg-base-300 rounded-xl h-48 w-full flex items-center justify-center">
+                            <i class="fas fa-tshirt text-6xl text-base-content opacity-50"></i>
                         </div>
                     {% endif %}
-                    
-                    <!-- Hot Badge -->
-                    <div class="absolute top-6 right-6 badge bg-red-500 text-white border-none pulse-red">
-                        <i class="fas fa-fire mr-1"></i>HOT
-                    </div>
                 </figure>
-                
-                <div class="card-body p-6">
-                    <h2 class="card-title text-white text-lg mb-2">{{ product.pr_name }}</h2>
-                    <p class="text-sm text-gray-400 mb-3">{{ product.pr_cate }}</p>
-                    
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="text-2xl font-bold text-red-400">${{ product.pr_price }}</div>
+                <div class="card-body">
+                    <h2 class="card-title">{{ product.pr_name }}</h2>
+                    <p class="text-sm text-base-content opacity-70">{{ product.pr_cate }}</p>
+                    <div class="flex items-center justify-between">
+                        <div class="text-2xl font-bold text-primary">${{ product.pr_price }}</div>
                         <div class="rating rating-sm">
                             {% for i in "12345" %}
                                 {% if forloop.counter <= product.pr_reviews %}
-                                    <input type="radio" name="rating-{{ product.pr_id }}" class="mask mask-star-2 bg-red-400" checked disabled />
+                                    <input type="radio" name="rating-{{ product.pr_id }}" class="mask mask-star-2 bg-orange-400" checked disabled />
                                 {% else %}
-                                    <input type="radio" name="rating-{{ product.pr_id }}" class="mask mask-star-2 bg-gray-600" disabled />
+                                    <input type="radio" name="rating-{{ product.pr_id }}" class="mask mask-star-2 bg-orange-400" disabled />
                                 {% endif %}
                             {% endfor %}
                         </div>
                     </div>
-                    
-                    <div class="card-actions justify-between">
-                        <a href="{% url 'product_detail' product.pr_id %}" class="btn btn-primary btn-sm flex-1 mr-2 hover:scale-105 transition-transform">
-                            <i class="fas fa-eye mr-2"></i>View
-                        </a>
+                    <div class="card-actions justify-end">
+                        <a href="{% url 'product_detail' product.pr_id %}" class="btn btn-primary btn-sm">View Details</a>
                         {% if user.is_authenticated %}
-                            <a href="{% url 'add_to_cart' product.pr_id %}" class="btn btn-outline btn-sm hover:scale-105 transition-transform">
+                            <a href="{% url 'add_to_cart' product.pr_id %}" class="btn btn-outline btn-sm">
                                 <i class="fas fa-shopping-cart"></i>
-                            </a>
-                            <a href="{% url 'add_to_wishlist' product.pr_id %}" class="btn btn-outline btn-sm hover:scale-105 transition-transform ml-2">
-                                <i class="fas fa-heart"></i>
                             </a>
                         {% endif %}
                     </div>
                 </div>
             </div>
             {% empty %}
-            <div class="col-span-full text-center py-16">
-                <div class="text-8xl mb-6 floating">🛍️</div>
-                <h3 class="text-2xl font-semibold mb-4 text-white">No products available</h3>
-                <p class="text-gray-400 text-lg mb-6">Our fashion experts are curating amazing pieces for you!</p>
-                <div class="btn btn-primary btn-lg">
-                    <i class="fas fa-clock mr-2"></i>Coming Soon
-                </div>
+            <div class="col-span-full text-center py-12">
+                <div class="text-6xl mb-4">👕</div>
+                <h3 class="text-xl font-semibold mb-2">No products available</h3>
+                <p class="text-base-content opacity-70">Check back soon for new arrivals!</p>
             </div>
             {% endfor %}
         </div>
         
         {% if products %}
-        <div class="text-center mt-12">
-            <a href="{% url 'product_list' %}" class="btn btn-primary btn-lg px-8 hover:scale-105 transition-transform">
-                <i class="fas fa-arrow-right mr-2"></i>Explore All Products
-            </a>
+        <div class="text-center mt-8">
+            <a href="{% url 'product_list' %}" class="btn btn-primary btn-lg">View All Products</a>
         </div>
         {% endif %}
     </div>
 </div>
 
-<!-- Newsletter Section -->
-<div class="py-16">
-    <div class="container mx-auto">
-        <div class="card bg-gradient-to-br from-red-600 to-red-800 text-white shadow-2xl">
-            <div class="card-body text-center p-12">
-                <div class="text-6xl mb-6 floating">📧</div>
-                <h2 class="text-3xl font-bold mb-4">Stay Ahead of Fashion Trends</h2>
-                <p class="text-xl text-red-100 mb-8 max-w-2xl mx-auto">
-                    Subscribe to our newsletter and be the first to know about exclusive deals, 
-                    new arrivals, and style tips from fashion experts.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                    <input type="email" placeholder="Enter your email" class="input input-bordered flex-1 text-gray-800">
-                    <button class="btn bg-white text-red-600 hover:bg-gray-100 border-none hover:scale-105 transition-transform">
-                        <i class="fas fa-paper-plane mr-2"></i>Subscribe
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 <!-- Features Section -->
-<div class="py-16">
+<div class="py-16 bg-base-200">
     <div class="container mx-auto">
-        <div class="text-center mb-12">
-            <h2 class="text-4xl font-bold mb-4">
-                <span class="text-gradient">Why Choose ChazeFashion?</span>
-            </h2>
-            <p class="text-xl text-gray-400">Experience the difference with our premium service</p>
-        </div>
-        
+        <h2 class="text-3xl font-bold text-center mb-12">Why Choose ChazeFashion?</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="card shadow-2xl hover:shadow-red-500/20 transition-all duration-300 group text-center">
-                <div class="card-body p-8">
-                    <div class="text-6xl mb-6 floating text-red-400 group-hover:scale-110 transition-transform">🚀</div>
-                    <h3 class="text-2xl font-bold mb-4 text-white">Lightning Fast Delivery</h3>
-                    <p class="text-gray-400 leading-relaxed">
-                        Get your fashion items delivered to your doorstep in record time. 
-                        Same-day delivery available in select cities.
-                    </p>
-                </div>
+            <div class="text-center">
+                <div class="text-4xl mb-4">🚚</div>
+                <h3 class="text-xl font-semibold mb-2">Fast Delivery</h3>
+                <p class="text-base-content opacity-70">Get your fashion items delivered to your doorstep quickly and safely.</p>
             </div>
-            
-            <div class="card shadow-2xl hover:shadow-green-500/20 transition-all duration-300 group text-center">
-                <div class="card-body p-8">
-                    <div class="text-6xl mb-6 floating text-green-400 group-hover:scale-110 transition-transform" style="animation-delay: 0.5s">💎</div>
-                    <h3 class="text-2xl font-bold mb-4 text-white">Premium Quality</h3>
-                    <p class="text-gray-400 leading-relaxed">
-                        Every piece is carefully selected and quality-tested. 
-                        We partner with top brands to bring you the finest materials.
-                    </p>
-                </div>
+            <div class="text-center">
+                <div class="text-4xl mb-4">💎</div>
+                <h3 class="text-xl font-semibold mb-2">Quality Products</h3>
+                <p class="text-base-content opacity-70">We offer only the highest quality clothing and accessories.</p>
             </div>
-            
-            <div class="card shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 group text-center">
-                <div class="card-body p-8">
-                    <div class="text-6xl mb-6 floating text-blue-400 group-hover:scale-110 transition-transform" style="animation-delay: 1s">🛡️</div>
-                    <h3 class="text-2xl font-bold mb-4 text-white">Secure & Safe</h3>
-                    <p class="text-gray-400 leading-relaxed">
-                        Your security is our priority. Advanced encryption and 
-                        multiple secure payment options for your peace of mind.
-                    </p>
-                </div>
+            <div class="text-center">
+                <div class="text-4xl mb-4">🛡️</div>
+                <h3 class="text-xl font-semibold mb-2">Secure Shopping</h3>
+                <p class="text-base-content opacity-70">Your security is our priority with safe and secure payment options.</p>
             </div>
         </div>
     </div>
 </div>
-
-<!-- Call to Action Section -->
-<div class="py-16">
-    <div class="container mx-auto">
-        <div class="card bg-gradient-to-r from-gray-800 to-gray-900 shadow-2xl">
-            <div class="card-body text-center p-12">
-                <h2 class="text-4xl font-bold mb-6 text-white">
-                    Ready to Transform Your Wardrobe?
-                </h2>
-                <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                    Join thousands of fashion-forward individuals who trust ChazeFashion 
-                    for their style needs. Start your fashion journey today!
-                </p>
-                <div class="flex gap-4 justify-center flex-wrap">
-                    <a href="{% url 'product_list' %}" class="btn btn-primary btn-lg px-8 hover:scale-105 transition-transform">
-                        <i class="fas fa-shopping-bag mr-2"></i>Start Shopping
-                    </a>
-                    {% if not user.is_authenticated %}
-                    <a href="{% url 'signup' %}" class="btn btn-outline btn-lg px-8 hover:scale-105 transition-transform">
-                        <i class="fas fa-user-plus mr-2"></i>Join Now
-                    </a>
-                    {% endif %}
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-{% endblock %}
+{% endblock %} 
