@@ -120,7 +120,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static_src/src'),  # Updated path
+    os.path.join(BASE_DIR, 'static_src/src'),  # Should point to ChazeFashion/static_src/src
 ]
 
 MEDIA_URL = '/media/'
